@@ -1,0 +1,13 @@
+.gif-card {
+  max-width: 150px;
+}
+.mat-card-title {
+  font-size: 0.5em;
+  font-weight: bold;
+  text-align: start;
+}
+.mat-card-subtitle {
+  font-size: 0.5em;
+  text-align: start;
+}
+
