@@ -9,6 +9,13 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 
+/**
+ * GifCardItemComponent
+ * @description
+ * This component is responsible for displaying a single gif item.
+ * It receives a gif item as input and displays the gif image and title.
+ * @author Janiel Franz Escalante
+ */
 @Component({
   selector: 'app-gif-card-item',
   standalone: true,

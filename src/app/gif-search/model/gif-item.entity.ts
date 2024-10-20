@@ -1,3 +1,14 @@
+/**
+ * GifItem entity
+ * @class GifItem
+ * @description
+ * This class is used to represent a gif item.
+ * @property {string} id - The gif id.
+ * @property {string} title - The gif title.
+ * @property {string} username - The gif username.
+ * @property {string} imageUrl - The gif image url.
+ * @author Janiel Franz Escalante
+ */
 export class GifItem {
   id: string;
   title: string;

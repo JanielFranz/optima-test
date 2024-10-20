@@ -6,6 +6,15 @@ import {GifCardListComponent} from '../../components/gif-card-list/gif-card-list
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material/sidenav';
 import {MatButton} from '@angular/material/button';
 
+/**
+ * SearchGifComponent
+ * This component is the main component for the gif search page.
+ * @description
+ * This component is responsible for the search gif page.
+ * It contains the search bar and the gif card list components.
+ * It also contains the history of the searched words.
+ * @author Janiel Franz Escalante
+ */
 @Component({
   selector: 'app-search-gif',
   standalone: true,
@@ -21,8 +30,6 @@ import {MatButton} from '@angular/material/button';
   styleUrl: './search-gif.component.css'
 })
 export class SearchGifComponent {
-
-
   //#region Properties
   protected wordList: Array<string> = [];
   protected gifItemList: Array<GifItem> = [];
@@ -30,7 +37,13 @@ export class SearchGifComponent {
   //#endregion
 
   //#region Service Methods
-
+  /**
+   * searchGifByWord
+   * @description
+   * This method is responsible for searching the gifs by word.
+   * It uses the gif service to get the gifs by word.
+   * @param word
+   */
   searchGifByWord(word: string) : void {
     this.gifService.getGifsByWord(word).subscribe((response: any) => {
       this.gifItemList = response.data.map((gif: any) => {
@@ -40,10 +53,18 @@ export class SearchGifComponent {
       console.log('gif list', this.gifItemList);
     })
   }
-
   //#endregion
 
   //#region EventHandlers
+
+  /**
+   * onSearchWord
+   * @description
+   * This method is the event handler for the search word event.
+   * It is called when the search bar component emits the search word event.
+   * @param word
+   * @author Janiel Franz Escalante
+   */
   onSearchWord(word: string) : void {
     this.searchGifByWord(word);
     if(word && !this.wordList.includes(word)){
