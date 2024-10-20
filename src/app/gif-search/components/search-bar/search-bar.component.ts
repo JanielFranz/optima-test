@@ -16,4 +16,5 @@ export class SearchBarComponent {
     console.log('word emmited: ', word);
   }
   //#endregion
+  protected readonly HTMLInputElement = HTMLInputElement;
 }

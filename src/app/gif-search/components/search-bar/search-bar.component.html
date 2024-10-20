@@ -1,5 +1,5 @@
 <h1>Search</h1>
 <input type = "text"
+       #searchInput
        placeholder = "Search for gifs"
-      (keyup.enter)="onWordEnter($event.target.value)">
->
+      (keyup.enter)="onWordEnter(searchInput.value)">
