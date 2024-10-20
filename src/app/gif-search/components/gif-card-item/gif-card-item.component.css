@@ -1,5 +1,7 @@
 .gif-card {
   max-width: 150px;
+  height: 250px;
+  margin-bottom: 1rem;
 }
 .mat-card-title {
   font-size: 0.5em;
