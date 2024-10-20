@@ -4,6 +4,7 @@ import {GifService} from '../../services/gif.service';
 import {SearchBarComponent} from '../../components/search-bar/search-bar.component';
 import {GifCardListComponent} from '../../components/gif-card-list/gif-card-list.component';
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material/sidenav';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-search-gif',
@@ -13,7 +14,8 @@ import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material
     GifCardListComponent,
     MatDrawerContainer,
     MatDrawer,
-    MatDrawerContent
+    MatDrawerContent,
+    MatButton
   ],
   templateUrl: './search-gif.component.html',
   styleUrl: './search-gif.component.css'
@@ -22,6 +24,7 @@ export class SearchGifComponent {
 
 
   //#region Properties
+  protected wordList: Array<string> = [];
   protected gifItemList: Array<GifItem> = [];
   constructor(private gifService: GifService){}
   //#endregion
@@ -36,5 +39,17 @@ export class SearchGifComponent {
       })
       console.log('gif list', this.gifItemList);
     })
+  }
+
+  //#endregion
+
+  //#region EventHandlers
+  onSearchWord(word: string) : void {
+    this.searchGifByWord(word);
+    if(word && !this.wordList.includes(word)){
+      this.wordList.push(word);
+      //refresh the list
+      this.wordList = [...this.wordList];
+    }
   }
 }

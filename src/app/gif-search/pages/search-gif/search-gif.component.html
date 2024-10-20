@@ -1,9 +1,15 @@
 <mat-drawer-container class="words">
-  <mat-drawer mode="side" opened>
+  <mat-drawer class="side-nav" mode="side" opened>
+    <h1 class="side-nav-title">GifsApp</h1>
+    <div class="word-list">
+      @for (word of wordList; track word){
+        <button class="button-history" mat-raised-button (click)="onSearchWord(word)">{{word}}</button>
+      }
+    </div>
 
   </mat-drawer>
   <mat-drawer-content>
-    <app-search-bar (gifSearched)="searchGifByWord($event)"/>
+    <app-search-bar (gifSearched)="onSearchWord($event)"/>
     <app-gif-card-list [gifs]="gifItemList"/>
   </mat-drawer-content>
 </mat-drawer-container>

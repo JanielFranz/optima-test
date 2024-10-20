@@ -1,0 +1,28 @@
+mat-drawer-container {
+  height: 100vh;
+}
+
+.side-nav{
+  background-color: darkgray;
+}
+
+.side-nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+.word-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start
+}
+
+.button-history{
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .side-nav {
+    display: none;
+  }
+}
