@@ -1,2 +1,10 @@
-<app-search-bar (gifSearched)="searchGifByWord($event)"/>
-<app-gif-card-list [gifs]="gifItemList"/>
+<mat-drawer-container class="words">
+  <mat-drawer mode="side" opened>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-search-bar (gifSearched)="searchGifByWord($event)"/>
+    <app-gif-card-list [gifs]="gifItemList"/>
+  </mat-drawer-content>
+</mat-drawer-container>
+

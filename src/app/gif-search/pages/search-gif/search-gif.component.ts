@@ -3,13 +3,17 @@ import {GifItem} from '../../model/gif-item.entity';
 import {GifService} from '../../services/gif.service';
 import {SearchBarComponent} from '../../components/search-bar/search-bar.component';
 import {GifCardListComponent} from '../../components/gif-card-list/gif-card-list.component';
+import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-search-gif',
   standalone: true,
   imports: [
     SearchBarComponent,
-    GifCardListComponent
+    GifCardListComponent,
+    MatDrawerContainer,
+    MatDrawer,
+    MatDrawerContent
   ],
   templateUrl: './search-gif.component.html',
   styleUrl: './search-gif.component.css'
